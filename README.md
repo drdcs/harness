@@ -1,4 +1,4 @@
-# app3 – Notebook Explainer
+# Notebook Explainer
 
 Point it at a notebook on disk and it writes three documents (for a manager, a developer, and an AI agent).
 Every claim cites the cell and lines it comes from. Click a cite to see that code.
