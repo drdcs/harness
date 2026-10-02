@@ -6,7 +6,7 @@ Every claim cites the cell and lines it comes from. Click a cite to see that cod
 
 ## Ideation
 
-![ideation-harness.png](../ideation-harness.png)
+![ideation-harness.png](ideation-harness.png)
 
 * Define the input contract
   Accept a local Databricks .py or Jupyter .ipynb file without executing it, keeping analysis fully source-based.
