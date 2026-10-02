@@ -1,0 +1,26 @@
+# Switch provider by changing `model` (or set env HARNESS_MODEL). Format: <provider>:<model>
+#   ollama:gemma4:12b              local, no key (default)
+#   google:gemini-2.5-flash        Google AI Studio free key -> export GOOGLE_API_KEY=...
+#   openai:gpt-4o-mini             export OPENAI_API_KEY=...
+#   anthropic:claude-sonnet-4-5    export ANTHROPIC_API_KEY=... (pip install "pydantic-ai-slim[anthropic]")
+#model: ollama:gemma4:12b
+model: google:gemini-3.5-flash       # <- uncomment (and comment the line above) to use Gemini
+ollama_base_url: http://localhost:11434/v1
+
+# API keys, exported as env vars at startup. A real env var of the same name takes precedence.
+# Do not commit real keys. Get a free Gemini key at https://aistudio.google.com/apikey
+api_keys:
+  GOOGLE_API_KEY:
+
+# How structured output is requested: native (JSON schema), tool (function call), prompted (schema in prompt)
+output_mode: native
+retries: 2            # times a claim with a bad cite is sent back to the model before being dropped
+
+model_settings:
+  temperature: 0.1
+
+# Merged into model_settings only when that provider is active
+provider_settings:
+  ollama:
+    extra_body:
+      reasoning_effort: none   # turn off gemma4 "thinking" - much faster, same output

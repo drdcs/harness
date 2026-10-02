@@ -1,0 +1,3 @@
+streamlit
+pyyaml
+pydantic-ai-slim[openai,google]
